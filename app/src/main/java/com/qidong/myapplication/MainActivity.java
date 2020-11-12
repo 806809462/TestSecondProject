@@ -1,29 +1,42 @@
 package com.qidong.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.lang.ref.WeakReference;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        testReturn();
-   /*     String txContent="jdasjdka-ass";
-        String beylid= txContent.substring(txContent.indexOf("-"));
-        Log.e("gg","==================beylid==="+beylid);*/
+        setContentView(R.layout.fragment1);
+        textView = findViewById(R.id.text1);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EventBusActivity.class);
+                startActivity(intent);
+                EventBus.getDefault().post("ssss");
+            }
+        });
+/*        test(5);
+        String txContent = "jdasjdka-ass";
+        String beylid = txContent.substring(txContent.indexOf("-"));
+        Log.e("gg", "==================beylid===" + beylid);*/
       /*  handler = new MyHandler(this);
         sendMyMessage();
         new AsyncTask<Void,Void,Void>(){
@@ -33,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         };*/
+    }
+
+    private void test(int a) {
+        if (a == 5) {
+            Log.e("gg", "==================test==11=");
+            return;
+        }
+        Log.e("gg", "==================test==222=");
     }
 
     private void testReturn() {
