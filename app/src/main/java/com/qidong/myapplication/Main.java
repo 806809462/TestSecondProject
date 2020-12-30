@@ -55,10 +55,10 @@ public class Main {
                         "After all, no one is perfect. " +
                         "Robinson Crusoe can not only lead the ambitious ones to success, but also guide average people to face up to life. " +
                         "This is the significance of the study of Robinson Crusoe";
-                //Log.e("MainActivity", "googleTranslate.............................1");
+                //Log.e("MainActivityApp", "googleTranslate.............................1");
                 Translation translation = translate.translate(sourceText, srcLang, tgtLang, model);
-                Log.e("MainActivity", "Source Text:.............................." + sourceLanguage + "..............." + sourceText);
-                Log.e("MainActivity", "TranslatedText.............................." + targetLanguage + "............" + translation.getTranslatedText());
+                Log.e("MainActivityApp", "Source Text:.............................." + sourceLanguage + "..............." + sourceText);
+                Log.e("MainActivityApp", "TranslatedText.............................." + targetLanguage + "............" + translation.getTranslatedText());
             }
         }).start();
     }

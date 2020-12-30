@@ -1,11 +1,8 @@
 package com.qidong.myapplication;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,7 +28,7 @@ public class MyTestActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         circleRelativeLayout=findViewById(R.id.circle);
         circleRelativeLayout.setColor(getResources().getColor(R.color.colorAccent));
         circleRelativeLayout.setAlhpa(160);
