@@ -29,11 +29,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-        <activity android:name=".mvp.mvp.MVPActivity"></activity>
-        <activity android:name=".mvp.flowable.FlowActivity"></activity>
-        <activity android:name=".mvp.down.DownActivity"></activity>
-        <activity android:name=".mvp.upload.UploadActivity"></activity>
-        <activity android:name=".mvp.livedata.LiveDataActivity"></activity>
+        <activity android:name=".retrofit.mvp.MVPActivity"></activity>
+        <activity android:name=".retrofit.flowable.FlowActivity"></activity>
+        <activity android:name=".retrofit.down.DownActivity"></activity>
+        <activity android:name=".retrofit.upload.UploadActivity"></activity>
+        <activity android:name=".retrofit.livedata.LiveDataActivity"></activity>
     </application>
 
 </manifest>
