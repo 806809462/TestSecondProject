@@ -1,31 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2F175A"
     tools:context=".MainActivity">
 
-    <com.qidong.myapplication.CircleRelativeLayout
-        android:id="@+id/circle"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/yuanxing">
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/hall_select_bg">
+
+        <TextView
+            android:id="@+id/select_content"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_toLeftOf="@+id/left_iv"></TextView>
+
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/abc_vector_test"
-            android:layout_centerInParent="true"></ImageView>
-        <com.qidong.myapplication.CircleRelativeLayout
-            android:id="@+id/circle1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            android:layout_margin="15dp"
-            android:background="#00000000">
+            android:id="@+id/left_iv"
+            android:layout_width="55dp"
+            android:layout_height="47dp"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/select_down"></ImageView>
+    </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:background="@mipmap/hall_selec_bottom_bg"
+        android:orientation="vertical">
 
-        </com.qidong.myapplication.CircleRelativeLayout>
-    </com.qidong.myapplication.CircleRelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="-15dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="5dp">
 
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="初级"
+                android:textColor="#FF00B1"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text1"
+                android:text="888场"
+                android:textColor="#FF00B1"></TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="初级"
+                android:textColor="#FF00B1"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text2"
+                android:text="888场"
+                android:textColor="#FF00B1"></TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="初级"
+                android:textColor="#FF00B1"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text3"
+                android:text="888场"
+                android:textColor="#FF00B1"></TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="358dp"
+        android:layout_height="176dp"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/beijing"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="49dp"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="49dp"
+            android:layout_marginRight="45dp"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/image1"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+
+        <ImageView
+            android:id="@+id/image4"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@+id/image2"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+
+        <ImageView
+            android:id="@+id/image5"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_below="@+id/image1"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/image1"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+
+        <ImageView
+            android:id="@+id/image6"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_below="@+id/image2"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@+id/image2"
+            android:background="@mipmap/jiaru_icon"></ImageView>
+    </RelativeLayout>
 </RelativeLayout>

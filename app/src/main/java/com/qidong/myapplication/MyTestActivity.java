@@ -1,11 +1,17 @@
 package com.qidong.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.qidong.myapplication.view.OvalImageView;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -23,16 +29,65 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MyTestActivity extends Activity {
-    private CircleRelativeLayout circleRelativeLayout;
+    private ImageView imageView;
+    private ImageView imageView2;
+    private ImageView imageView3;
+    private ImageView imageView4;
+    private ImageView imageView5;
+    private ImageView imageView6;
+    private AnimationDrawable animationDrawable1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        circleRelativeLayout=findViewById(R.id.circle);
+        imageView = findViewById(R.id.image1);
+        imageView2 = findViewById(R.id.image2);
+        imageView3 = findViewById(R.id.image3);
+        imageView4 = findViewById(R.id.image4);
+        imageView5 = findViewById(R.id.image5);
+        imageView6 = findViewById(R.id.image6);
+
+        Intent intent=getIntent();
+        Bundle bundle=intent.getExtras();
+        bundle.getString("cc");
+        Log.d("gg","========bundle======="+bundle.getString("cc"));
+
+       /* imageView.setBackgroundResource(R.drawable.testanim);
+        imageView2.setBackgroundResource(R.drawable.testanim);
+        imageView3.setBackgroundResource(R.drawable.testanim);
+        imageView4.setBackgroundResource(R.drawable.testanim);
+        AnimationDrawable animationDrawable = (AnimationDrawable) imageView.getBackground();
+        animationDrawable.start();//开启动画*/
+     /*   animationDrawable1 = animationDrawable();
+        imageView.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+
+        animationDrawable1 = animationDrawable();
+        imageView2.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+
+        animationDrawable1 = animationDrawable();
+        imageView3.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+
+        animationDrawable1 = animationDrawable();
+        imageView4.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+
+        animationDrawable1 = animationDrawable();
+        imageView5.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+
+        animationDrawable1 = animationDrawable();
+        imageView6.setImageDrawable(animationDrawable1);
+        animationDrawable1.start();
+*/
+
+      /*  circleRelativeLayout=findViewById(R.id.circle);
         circleRelativeLayout.setColor(getResources().getColor(R.color.colorAccent));
-        circleRelativeLayout.setAlhpa(160);
-        OkHttpClient okHttpClient=new OkHttpClient();
+        circleRelativeLayout.setAlhpa(160);*/
+      /*  OkHttpClient okHttpClient=new OkHttpClient();
         FormBody formBody=new FormBody.Builder().add("key","value").build();
         Request request=new Request.Builder().url("").post(formBody).build();
         Call call=okHttpClient.newCall(request);
@@ -190,9 +245,21 @@ public class MyTestActivity extends Activity {
             public void onResponse(Call call, Response response) throws IOException {
                 response.body().toString();
             }
-        });
+        });*/
 
-        Log.d("gg", "=======onCreate=============="+ getLocalClassName());
+        Log.d("gg", "=======onCreate==============" + getLocalClassName());
+    }
+
+    public AnimationDrawable animationDrawable() {
+        AnimationDrawable animationDrawab = null;
+        animationDrawab = new AnimationDrawable();
+        animationDrawab.addFrame(getResources().getDrawable(R.drawable.bizgame_hall_ranking_icon), (int) (Math.random() * 12 + 1) * 100);
+        animationDrawab.addFrame(getResources().getDrawable(R.drawable.jiaru_icon), (int) (Math.random() * 15 + 1) * 100);
+        animationDrawab.addFrame(getResources().getDrawable(R.drawable.game_icon_5783), (int) (Math.random() * 20 + 1) * 100);
+        animationDrawab.addFrame(getResources().getDrawable(R.drawable.game_icon_8421), (int) (Math.random() * 15 + 1) * 100);
+        animationDrawab.addFrame(getResources().getDrawable(R.drawable.game_icon_8919), (int) (Math.random() * 10 + 1) * 100);
+        animationDrawab.setOneShot(false);
+        return animationDrawab;
     }
 
     @Override
@@ -201,27 +268,38 @@ public class MyTestActivity extends Activity {
         Log.d("gg", "=======onStart==============" + getLocalClassName());
     }
 
+    public int dip2px(float dpValue) {
+        float scale = getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("gg", "=======onResume=============="+ getLocalClassName());
+        Log.d("gg", "=======onResume==============" + getLocalClassName());
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("gg", "=======onPause=============="+ getLocalClassName());
+        Log.d("gg", "=======onPause==============" + getLocalClassName());
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("gg", "=======onStop=============="+ getLocalClassName());
+        Log.d("gg", "=======onStop==============" + getLocalClassName());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+       // animationDrawable1.stop();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("gg", "=======onRestart=============="+ getLocalClassName());
+        Log.d("gg", "=======onRestart==============" + getLocalClassName());
     }
 }

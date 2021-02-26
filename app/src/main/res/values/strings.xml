@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="shortcut_setting_long">设置</string>
+
+    <string name="shortcut_setting_short">设置</string>
+
+    <string name="shortcut_mine_long">个人中心</string>
+
+    <string name="shortcut_mine_short">个人中心</string>
 </resources>

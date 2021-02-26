@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!--<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,27 +15,78 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".recycleview.TestRefreshActivity">
+
+        <activity android:name=".shortcutstest.MainActivity">
+
+
             <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
-        </activity>
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.h.cheng.mvp.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
+
             <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
-        <activity android:name=".retrofit.mvp.MVPActivity"></activity>
-        <activity android:name=".retrofit.flowable.FlowActivity"></activity>
-        <activity android:name=".retrofit.down.DownActivity"></activity>
-        <activity android:name=".retrofit.upload.UploadActivity"></activity>
-        <activity android:name=".retrofit.livedata.LiveDataActivity"></activity>
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+        </activity>
+
+        <activity android:name=".shortcutstest.MineActivity" />
+
+
+        <activity android:name=".shortcutstest.SettingActivity">
+
+
+            <intent-filter>
+
+                <action android:name="com.example.shortcutstest.SETTING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".MyTestActivity"></activity>
+        <!--  <activity android:name=".MyTestActivity">
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+          </activity>
+
+          <provider
+              android:name="androidx.core.content.FileProvider"
+              android:authorities="com.h.cheng.mvp.fileprovider"
+              android:exported="false"
+              android:grantUriPermissions="true">
+              <meta-data
+                  android:name="android.support.FILE_PROVIDER_PATHS"
+                  android:resource="@xml/file_paths" />
+          </provider>
+
+          <activity android:name=".shortcutstest.SettingActivity">
+              <intent-filter>
+                  <action android:name="android.intent.action.aaa"></action>
+                  <category android:name="android.intent.category.DEFAULT" />
+              </intent-filter>
+          </activity>
+
+          <activity android:name=".retrofit.mvp.MVPActivity"></activity>
+          <activity android:name=".retrofit.flowable.FlowActivity"></activity>
+          <activity android:name=".retrofit.down.DownActivity"></activity>
+          <activity android:name=".retrofit.upload.UploadActivity"></activity>
+          <activity android:name=".retrofit.livedata.LiveDataActivity"></activity>
+  -->
+        <receiver
+            android:name=".shortcutstest.InstallShortcutReceiver"
+            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT">
+            <intent-filter>
+                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

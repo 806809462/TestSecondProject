@@ -1,6 +1,9 @@
 package com.qidong.myapplication.recycleview;
 
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -40,6 +43,7 @@ public class TestRefreshActivity extends AppCompatActivity implements AdapterVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       // createShortCut();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_refresh);
@@ -74,8 +78,20 @@ public class TestRefreshActivity extends AppCompatActivity implements AdapterVie
             }
         });
         mSmartRefreshLayout.autoRefresh();
-
     }
+
+    private void createShortCut() {
+        Intent intent = new Intent();
+        intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "桌面快捷方式");
+        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON, BitmapFactory.decodeResource(getResources(), R.drawable.yuanxing));
+
+        Intent shortIntent = new Intent();
+        shortIntent.setAction("android.intent.action.aaa");
+        intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortIntent);
+        sendBroadcast(intent);
+    }
+
 
     private void refresh(RefreshLayout refresh) {
         refresh.getLayout().postDelayed(() -> {

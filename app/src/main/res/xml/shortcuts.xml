@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/ic_settings"
+        android:shortcutId="setting"
+        android:shortcutLongLabel="@string/shortcut_setting_long"
+        android:shortcutShortLabel="@string/shortcut_setting_short">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.qidong.myapplication.shortcutstest.MainActivity"
+            android:targetPackage="com.qidong.myapplication" />
+        <intent
+            android:action="com.example.shortcutstest.SETTING"
+            android:targetClass="com.qidong.myapplication.shortcutstest.SettingActivity"
+            android:targetPackage="com.qidong.myapplication" />
+    </shortcut>
+
+    <shortcut
+        android:icon="@drawable/ic_mine"
+        android:shortcutId="mine"
+        android:shortcutLongLabel="@string/shortcut_mine_long"
+        android:shortcutShortLabel="@string/shortcut_mine_short">
+        <intent
+            android:action="com.example.shortcutstest.MINE"
+            android:targetClass="com.qidong.myapplication.shortcutstest.MineActivity"
+            android:targetPackage="com.qidong.myapplication" />
+    </shortcut>
+</shortcuts>
