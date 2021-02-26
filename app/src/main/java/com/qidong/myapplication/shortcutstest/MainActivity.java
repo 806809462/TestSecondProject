@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 创建动态快捷方式
+     *
+     *
+     *
      */
     @TargetApi(Build.VERSION_CODES.N_MR1)
     private void createDynamicShortcut() {
